@@ -3,13 +3,14 @@ package com.calc.junit.service.validator;
 import com.calc.junit.domain.ComplexObject;
 import org.junit.Test;
 
-public class SecondValidationServiceImplTest {
+import static org.junit.Assert.*;
 
-    private ComplexObjectValidator complexObjectValidator = new SecondValidationServiceImpl();
+public class ThirdValidationServiceImplTest {
+    private ComplexObjectValidator complexObjectValidator = new ThirdValidationServiceImpl();
 
     @Test(expected = IllegalArgumentException.class)
     public void validateFailed() throws Exception {
-        ComplexObject complexObject = new ComplexObject(0, 1);
+        ComplexObject complexObject = new ComplexObject(50, 1);
 
         complexObjectValidator.validate(complexObject);
 
@@ -17,8 +18,9 @@ public class SecondValidationServiceImplTest {
 
     @Test
     public void validateSuccess() {
-        ComplexObject complexObject = new ComplexObject(1, 1);
+        ComplexObject complexObject = new ComplexObject(50, -10);
 
         complexObjectValidator.validate(complexObject);
     }
+
 }

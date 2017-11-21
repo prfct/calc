@@ -1,5 +1,6 @@
 package com.calc.junit;
 
+import com.calc.junit.common.Constants;
 import com.calc.junit.domain.ComplexObject;
 import com.calc.junit.domain.Service;
 import com.calc.junit.service.CountingService;
@@ -17,6 +18,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CalculatorTest {
+
     @Mock
     private CountingService countingService;
 
@@ -41,7 +43,8 @@ public class CalculatorTest {
         ComplexObject actual = calculator.add(complexObject, complexObject1);
 
         Assert.assertEquals(expected, actual);
-        verify(countingService).add(complexObject, complexObject1);
+        verify(countingService, atLeastOnce()).add(complexObject, complexObject1);
+        verify(statisticService, atLeastOnce()).addInvocationMethod(Constants.ADD);
     }
 
     @Test(expected = IllegalArgumentException.class)

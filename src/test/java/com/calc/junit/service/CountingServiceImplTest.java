@@ -9,7 +9,6 @@ import org.junit.Test;
 public class CountingServiceImplTest {
     private CountingService countingService = new CountingServiceImpl();
 
-
     @Test
     public void addSuccessTest() throws Exception {
 
