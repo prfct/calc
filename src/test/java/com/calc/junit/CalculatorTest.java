@@ -38,6 +38,7 @@ public class CalculatorTest {
         ComplexObject complexObject1 = new ComplexObject(3, 4, Service.SAMSUNG);
 
         doNothing().when(calculatorParamsValidator).validate(any(ComplexObject.class), any(ComplexObject.class));
+        doNothing().when(statisticService).addInvocationMethod(Constants.ADD);
         when(countingService.add(complexObject, complexObject1)).thenReturn(expected);
 
         ComplexObject actual = calculator.add(complexObject, complexObject1);
