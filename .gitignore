@@ -1,0 +1,23 @@
+# Eclipse
+.classpath
+.project
+.metadata
+.settings
+
+# Intellij IDEA
+.idea/
+out/
+*.iml
+/classes
+
+target/
+.npm
+junit.xml
+eslint.xml
+*.log
+*.lock
+ui-js/coverage/
+node_modules/
+*.xlsx
+
+ui-js/package-lock.json
